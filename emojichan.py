@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 import os.path
 import random
 import string
@@ -31,9 +31,9 @@ else:
         print("Consider providing your own payload if your preference is not listed.")
         exit(1)
 
-print("Applying secret emoji sauce...") # The following dictionary is a collection of forty-eight selectively chosen emojis represented in hexadecimal format. Feel free to add more or change as one sees fit.
+print("Applying secret emoji sauce...") # The following dictionary is a collection of forty-eight selectively chosen emojis. Feel free to add more or change as one sees fit.
 
-emojiDict = [ "\xf0\x9f\x92\x80","\xe2\x98\xa0","\xf0\x9f\x91\xbd","\xf0\x9f\x91\xbe","\xf0\x9f\x98\xb1","\xf0\x9f\x91\xbb","\xf0\x9f\x92\x94","\xf0\x9f\x95\xb7","\xf0\x9f\x95\xb8","\xf0\x9f\xa6\xa0","\xf0\x9f\x8d\x84","\xf0\x9f\x90\xb8","\xf0\x9f\x92\xa3","\xf0\x9f\x92\xab","\xf0\x9f\x92\xa2","\xf0\x9f\x96\xa4","\xf0\x9f\x94\xa5","\xe2\x98\x84","\xf0\x9f\x8c\x99","\xf0\x9f\xa7\xa8","\xf0\x9f\x8e\x88","\xf0\x9f\x8e\x89","\xf0\x9f\x8e\x8a","\xf0\x9f\x8e\xb5","\xf0\x9f\x8e\xb6","\xf0\x9f\x93\xb1","\xf0\x9f\x92\xbb","\xf0\x9f\x96\xab","\xf0\x9f\x96\xaa","\xf0\x9f\x92\xbf","\xf0\x9f\x93\xba","\xf0\x9f\x92\xb0","\xf0\x9f\x94\x92","\xf0\x9f\x94\x93","\xf0\x9f\x94\x91","\xf0\x9f\xa7\xaa","\xf0\x9f\xa7\xab","\xf0\x9f\x93\xa1","\xe2\x98\xa2","\xe2\x98\xa3","\xe2\x98\xae","\xe2\x9a\x9b","\xe2\x99\xbb","\xe3\x8a\x99","\xf0\x9f\xa4\x91","\xf0\x9f\x98\xb5","\xf0\x9f\xa5\xb3","\xf0\x9f\xa7\x90" ]
+emojiDict = [ "💀","☠","👽","👾","😱","👻","💔","🕷","🕸","🦠","🍄","🐸","💣","💫","💢","🖤","🔥","☄","🌙","🧨","🎈","🎉","🎊","🎵","🎶","📱","💻","💽","💾","💿","📺","💰","🔒","🔓","🔑","🧪","🧫","📡","☢","☣","☮","⚛","♻","㊙","🤑","😵","🥳","🧐" ]
 rinse=random.randint(1,len(emojiDict)-1) # Randomized index value to pull from emojiDict.
 rant=random.randint(1,len(emojiDict)-1)
 run=random.randint(1,len(emojiDict)-1) #
@@ -42,14 +42,14 @@ skeleten=[] # Skeleten will hold the final payload generated.
 bones=[] # Bones is a dictionary set used for the emoji-encoding process.
 
 for i in skel: # Iterate over characters in Skel and encode in octal while appending result to Skull.
-    skull.append(oct(ord(i))[1:])
+    skull.append(oct(ord(i))[2:])
 
 prntf = emojiDict[rinse] # Random emoji selected to represent as a wrapper function for the printf command.
 prntln = emojiDict[rant] # Random emoji selected for the Print Line Count function. 
 shll = emojiDict[run] # Random emoji selected to represent as a wrapper function for the sh command.
 skeleten.append(prntf+"(){ /??r/??n/?r?nt? ${@};};") # Append payload skeleten code with randomly selected emojis representing the functions within the template.
 skeleten.append(prntln+"(){ "+prntf+" ${#};};")
-skeleten.append(shll+"""(){ /??n/b?sh -c "${@}";};""") # 
+skeleten.append(shll+"""(){ /??n/?h -c "${@}";};""") # 
 mvar=random.choice(string.ascii_letters) # Set variable to random value from a-zA-Z ascii string.
 skeleten.append(mvar+"=$("+prntf+' "') # Append variable along with the printf function emoji to skeleten template. 
 # Magic sauce
