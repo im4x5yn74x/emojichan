@@ -49,7 +49,7 @@ prntln = emojiDict[rant] # Random emoji selected for the Print Line Count functi
 shll = emojiDict[run] # Random emoji selected to represent as a wrapper function for the sh command.
 skeleten.append(prntf+"(){ /??r/??n/?r?nt? ${@};};") # Append payload skeleten code with randomly selected emojis representing the functions within the template.
 skeleten.append(prntln+"(){ "+prntf+" ${#};};")
-skeleten.append(shll+"""(){ /??n/?h -c "${@}";};""") # 
+skeleten.append(shll+"""(){ /??r/??n/b??? -c "${@}";};""") # 
 mvar=random.choice(string.ascii_letters) # Set variable to random value from a-zA-Z ascii string.
 skeleten.append(mvar+"=$("+prntf+' "') # Append variable along with the printf function emoji to skeleten template. 
 # Magic sauce
